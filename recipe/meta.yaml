@@ -1,5 +1,6 @@
+{% set reqfile = "requirements.txt" %}
 {% set name = "pythae" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.2" %}
 
 
 package:
@@ -8,12 +9,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pythae-{{ version }}.tar.gz
-  sha256: d645d01025a35b22fbb19e42a0a73946b8c1156b01607f49e7939b27ed77140e
+  sha256: 018b5dd9a232c0186fe71ebbaa7b023dfa6a1df817a004996eeb27b8b59f748b
 
 build:
   number: 0
   noarch: python
-  script: 
+  script:
     ## Ensure inclusion of requirements.txt
     {% set reqfile = "requirements.txt" %}
     {% set reqsource = "src/" ~ name ~ ".egg-info/requires.txt" %}
