@@ -12,19 +12,9 @@ source:
   sha256: 018b5dd9a232c0186fe71ebbaa7b023dfa6a1df817a004996eeb27b8b59f748b
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script:
-    ## Ensure inclusion of requirements.txt
-    {% set reqfile = "requirements.txt" %}
-    {% set reqsource = "src/" ~ name ~ ".egg-info/requires.txt" %}
-    # IF {{ reqfile }} is NOT PRESENT, COPY {{ reqfile }} from {{ reqsource }}
-    - echo -e "\n>>> ENSURE INCLUSION OF '{{ reqfile }}' <<<\n\n"
-    - if [ ! -f {{ reqfile }} ] && [ -f {{ reqsource }} ]; then cp {{ reqsource }} {{ reqfile }}; fi  # [not win]
-    #- copy {{ name }}.egg-info\requires.txt {{ reqfile }}  # [win]
-    - copy {{ reqsource | replace('/', '\\') }} {{ reqfile }}  # [win] 
-    ## Install package {{ name }} from PyPI 
-    - {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
