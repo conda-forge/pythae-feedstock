@@ -1,6 +1,6 @@
 {% set reqfile = "requirements.txt" %}
 {% set name = "pythae" %}
-{% set version = "0.0.4" %}
+{% set version = "0.0.5" %}
 
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pythae-{{ version }}.tar.gz
-  sha256: 43c449300a50d23f5e3981079baf08e1f1ca6ada5f5db05dee1995054a4d1261
+  sha256: 8cb7fa60899015a63d1b5af66d5c68e35ad9842b78ec80ddf4cb58bb9fa11c78
 
 build:
   number: 0
