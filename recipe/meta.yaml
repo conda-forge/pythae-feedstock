@@ -12,18 +12,18 @@ source:
   sha256: 0f15f6b50223ca6785831ab41d3428f73c46c2c54b037798dae495b5b986e6c6
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
-    - python >=3.6
+    - python >=3.7
     - dataclasses >=0.6
-    - dill >=0.3.3
+    - cloudpickle>=2.1.0
     - imageio
     - numpy >=1.19
     - pydantic >=1.8.2
@@ -60,4 +60,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - sugatoray
+    - clementchadebec
