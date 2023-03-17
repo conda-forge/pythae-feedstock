@@ -1,11 +1,11 @@
-About pythae
-============
+About pythae-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pythae-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/clementchadebec/benchmark_VAE
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pythae-feedstock/blob/main/LICENSE.txt)
 
 Summary: Unifying Generative Autoencoders in Python
 
@@ -157,4 +157,5 @@ Feedstock Maintainers
 =====================
 
 * [@clementchadebec](https://github.com/clementchadebec/)
+* [@sugatoray](https://github.com/sugatoray/)
 
