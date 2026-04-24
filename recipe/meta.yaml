@@ -8,20 +8,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pythae-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pythae-{{ version }}.tar.gz
   sha256: 191824894f1b49dc425dea4a53dc24491ebdbe22334298b4ac42e9f0b0726b09
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - dataclasses >=0.6
     - cloudpickle >=2.1.0
     - imageio
@@ -34,6 +34,8 @@ requirements:
     - typing-extensions
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pythae
   # commands:
